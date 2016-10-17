@@ -87,7 +87,7 @@ python powerline_setup()
 python del powerline_setup
 
 set backspace=2
-set pastetoggle=<F2>
+set pastetoggle=<F8>
 
 " ack.vim
 let g:ackprg = 'ag --nogroup --nocolor --column'
