@@ -19,6 +19,4 @@ git submodule update
 
 3. Install Plugins:
 
-```
 Launch `vim` and run `:PluginInstall`
-```
