@@ -1,41 +1,13 @@
-source ~/.vim/bundles.vim
-
-" Plugin 'altercation/vim-colors-solarized' settings 
-syntax enable
-set background=dark
-colorscheme solarized
-" let g:solarized_termcolors=256
-
-" split navigations
-" nnoremap <C-J> <C-W><C-J>
-" nnoremap <C-K> <C-W><C-K>
-" nnoremap <C-L> <C-W><C-L>
-" nnoremap <C-H> <C-W><C-H>
-
-" Plugin 'nathanaelkane/vim-indent-guides' settings
-let g:indent_guides_enable_on_vim_startup=1
-let g:indent_guides_start_level=2
-let g:indent_guides_guide_size=1
-
-" Other settings
-set encoding=utf8
-set fileencoding=utf8
-set fileencodings=ucs-bom,utf-8,cp936,gb18030,gbk,latin1
-
 " Use spaces instead of tabs
 set expandtab
 
 " Be smart when using tabs ;)
 set smarttab
 
-filetype indent on
-
 " 1 tab == 4 spaces
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
-
-syntax on
 
 set laststatus=2
 set ruler
@@ -44,50 +16,47 @@ set cursorline
 set cursorcolumn
 set hlsearch
 
-" Enable folding
-" set foldmethod=indent
-" set foldlevel=128
-" set nofoldenable
-" let g:SimpylFold_docstring_preview = 1
-" let g:SimpylFold_fold_docstring = 0
-" let g:SimpylFold_fold_import = 0
-
-" Enable folding with the spacebar
-" nnoremap <space> za
-
-" au BufNewFile,BufRead *.py
-"     \ set tabstop=4 |
-"     \ set softtabstop=4 |
-"     \ set shiftwidth=4 |
-"     \ set textwidth=79 |
-"     \ set expandtab |
-"     \ set autoindent |
-"     \ set fileformat=unix |
-
-" au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
-" let g:ycm_python_binary_path = '/Users/sveinchen/.virtualenvs/ycm/bin/python'
-
-" let g:python_highlight_all=1
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-
-" let g:pymode_rope=0
-" let g:pymode_lint=0
- 
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_auto_loc_list=1
-let g:syntastic_check_on_open=1
-let g:syntastic_loc_list_height=5
-let g:syntastic_python_checkers=['pylint', 'flake8', 'python']
-let g:syntastic_check_on_wq=0
- 
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
-
 set backspace=2
-set pastetoggle=<F8>
+set pastetoggle=<F9>
 
-" ack.vim
+" Other settings
+set encoding=utf8
+set fileencoding=utf8
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,gbk,latin1
+
+" Plugins
+source ~/.vim/bundles.vim
+
+" settings for plugin 'altercation/vim-colors-solarized'
+syntax enable
+set background=dark
+colorscheme solarized
+" let g:solarized_termcolors=256
+ 
+" settings for plugin 'vim-airline/vim-airline'
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'base16'
+
+" settings for plugin 'nathanaelkane/vim-indent-guides'
+let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
+
+" settings for plugin 'majutsushi/tagbar'
+let g:tagbar_left = 1
+nmap <F8> :TagbarToggle<CR>
+
+" settings for plugin 'scrooloose/nerdtree'
+nmap <F7> :NERDTreeToggle<CR>
+
+" settings for plugin 'mileszs/ack.vim'
 let g:ackprg = 'ag --nogroup --nocolor --column'
+
+" settings for plugin 'SirVer/ultisnips'
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+" let g:UltiSnipsListSnippets="<c-l>"
+
+" settings for plugin 'davidhalter/jedi-vim'
+" autocmd FileType python setlocal completeopt-=preview
