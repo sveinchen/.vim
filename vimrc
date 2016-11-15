@@ -38,10 +38,8 @@ colorscheme solarized
     let g:airline_theme = 'base16'
 " }
 
-" nathanaelkane/vim-indent-guides {
-    let g:indent_guides_enable_on_vim_startup=1
-    let g:indent_guides_start_level=2
-    let g:indent_guides_guide_size=1
+" davidhalter/jedi-vim {
+    autocmd FileType python setlocal completeopt-=preview
 " }
 
 " majutsushi/tagbar {
@@ -49,25 +47,34 @@ colorscheme solarized
     nmap <F8> :TagbarToggle<CR>
 " }
 
-" scrooloose/nerdtree {
-    nmap <F7> :NERDTreeToggle<CR>
-" }
-
-" Valloric/YouCompleteMe {
-    let g:ycm_autoclose_preview_window_after_completion = 1
-" }
-
 " mileszs/ack.vim {
     let g:ackprg = 'ag --nogroup --nocolor --column'
+" }
+
+" nathanaelkane/vim-indent-guides {
+    let g:indent_guides_enable_on_vim_startup=1
+    let g:indent_guides_start_level=2
+    let g:indent_guides_guide_size=1
+" }
+
+" scrooloose/nerdtree {
+    nmap <F7> :NERDTreeToggle<CR>
 " }
 
 " SirVer/ultisnips {
     let g:UltiSnipsExpandTrigger="<c-j>"
     let g:UltiSnipsJumpForwardTrigger="<c-j>"
     let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-"   let g:UltiSnipsListSnippets="<c-l>"
+    " let g:UltiSnipsListSnippets="<c-l>"
 " }
 
-" davidhalter/jedi-vim {
-"   autocmd FileType python setlocal completeopt-=preview
+" Valloric/YouCompleteMe {
+    let g:ycm_autoclose_preview_window_after_completion = 1
+" }
+
+" vim-syntastic/syntastic {
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
 " }
