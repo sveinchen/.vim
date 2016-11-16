@@ -1,0 +1,107 @@
+set nocompatible  " be iMproved, required
+filetype off  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'  " {
+
+    " Vim UI {
+
+        Plugin 'altercation/vim-colors-solarized'  " {
+            " let g:solarized_termcolors=256
+            " let g:solarized_termtrans=1
+            " let g:solarized_contrast="normal"
+            " let g:solarized_visibility="normal"
+        " }
+    
+        Plugin 'vim-airline/vim-airline'  " {
+            let g:airline_powerline_fonts = 1
+
+            Plugin 'vim-airline/vim-airline-themes'  " {
+                if isdirectory(expand("~/.vim/bundle/vim-airline-themes/"))
+                    let g:airline_theme = 'base16'
+                endif
+            " }
+            Plugin 'tpope/vim-fugitive'
+        " }
+
+    " }
+    
+    " General Programming {
+    
+        if executable('ag')
+            Plugin 'mileszs/ack.vim'  " {
+                let g:ackprg = 'ag --nogroup --nocolor --column --smart-case'
+            " }
+        endif
+    
+        if executable('ctags')
+            Plugin 'majutsushi/tagbar'  " {
+                let g:tagbar_left = 1
+                nmap <F8> :TagbarToggle<CR>
+            " }
+        endif
+
+        Plugin 'nathanaelkane/vim-indent-guides'  " {
+            let g:indent_guides_enable_on_vim_startup = 1
+            let g:indent_guides_guide_size = 1
+            let g:indent_guides_start_level = 2
+        " }
+    
+        Plugin 'kien/ctrlp.vim'  " {
+            let g:ctrlp_custom_ignore = {
+                \ 'dir':  '\.git$\|\.hg$\|\.svn$',
+                \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$',
+                \ }
+        " }
+        
+        Plugin 'vim-syntastic/syntastic'  " {
+            let g:syntastic_always_populate_loc_list = 1
+            let g:syntastic_auto_loc_list = 1
+            let g:syntastic_check_on_open = 1
+            let g:syntastic_check_on_wq = 0
+        " }
+
+    " }
+    
+    " Snippets & AutoComplete {
+
+        Plugin 'SirVer/ultisnips'  " {
+            let g:UltiSnipsExpandTrigger="<c-j>"
+            let g:UltiSnipsJumpForwardTrigger="<c-j>"
+            let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+            Plugin 'honza/vim-snippets'
+        " }
+    
+        Plugin 'Valloric/YouCompleteMe'  " {
+            let g:ycm_autoclose_preview_window_after_completion = 1
+
+            if !exists('g:ycm_semantic_triggers')
+                let g:ycm_semantic_triggers = {}
+            endif
+        " }
+
+    " }
+    
+    " Python {
+
+        " AutoComplete {
+            let g:ycm_semantic_triggers.python = [
+                \ '.',
+                \ 're!\s*import\s+[a-zA-Z_]',
+                \ 're!^\s*from\s+[a-zA-Z_]',
+                \ ]
+        " }
+
+        Plugin 'hdima/python-syntax'  " python syntax highlighting script for vim
+        Plugin 'hynek/vim-python-pep8-indent'  " a nicer python indentation style for vim
+        Plugin 'jmcantrell/vim-virtualenv'  " vim plugin for working with python virtualenvs
+    " }
+" }
+
+" All Plugins must be added before the following line
+call vundle#end()  " required
+filetype plugin indent on  " required
