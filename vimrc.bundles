@@ -55,6 +55,9 @@ Plugin 'VundleVim/Vundle.vim'  " {
                 \ 'dir':  '\.git$\|\.hg$\|\.svn$',
                 \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$',
                 \ }
+
+            Plugin 'tacahiroy/ctrlp-funky'
+                
         " }
         
         Plugin 'vim-syntastic/syntastic'  " {
