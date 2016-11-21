@@ -94,7 +94,7 @@ Plugin 'VundleVim/Vundle.vim'  " {
         " AutoComplete {
             let g:ycm_semantic_triggers.python = [
                 \ '.',
-                \ 're!\s*import\s+[a-zA-Z_]',
+                \ 're!\s*import\s+[a-zA-Z_](\w*,\s*[a-zA-Z_])*',
                 \ 're!^\s*from\s+[a-zA-Z_]',
                 \ ]
         " }
