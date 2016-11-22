@@ -21,6 +21,6 @@ git submodule update
 
 Launch `vim` and run `:PluginInstall`
 
-4.Custom settings
+## Custom settings
 
 Edit your own settings in `~/.vimrc.local`
