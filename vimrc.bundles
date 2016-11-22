@@ -97,6 +97,8 @@ Plugin 'VundleVim/Vundle.vim'  " {
                 \ 're!\s*import\s+[a-zA-Z_](\w*,\s*[a-zA-Z_])*',
                 \ 're!^\s*from\s+[a-zA-Z_]',
                 \ ]
+            let g:ycm_seed_identifiers_with_syntax = 1
+            let g:ycm_key_invoke_completion = '<c-a>'
         " }
 
         Plugin 'hdima/python-syntax'  " python syntax highlighting script for vim
