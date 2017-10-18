@@ -5,7 +5,7 @@
 1.Clone and install this repo:
 
 ```
-git clone git://github.com/sveinchen/.vim.git ~/.vim
+git clone https://github.com/sveinchen/.vim ~/.vim
 ln -s ~/.vim/vimrc ~/.vimrc
 ```
 
