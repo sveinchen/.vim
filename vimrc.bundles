@@ -50,7 +50,7 @@ Plugin 'VundleVim/Vundle.vim'  " {
             let g:indent_guides_start_level = 2
         " }
     
-        Plugin 'kien/ctrlp.vim'  " {
+        Plugin 'ctrlpvim/ctrlp.vim'  " {
             let g:ctrlp_custom_ignore = {
                 \ 'dir':  '\.git$\|\.hg$\|\.svn$',
                 \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$',
